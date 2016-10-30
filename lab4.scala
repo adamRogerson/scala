@@ -7,14 +7,13 @@ object lab4 {
 		def cal(oper:Int,factSum:Int): Int=
 		{
 			if (oper <= 1)
-				factSum	
+				factSum
 
 			else
 				cal(oper-1,(factSum*oper))
-		}			
-	
+                }
 		if (oper == 0)
-			1	
+			1
 		else
 			cal(oper,1)
 
@@ -22,7 +21,7 @@ object lab4 {
 
 	def series(start:Int,ratio:Int,end:Int): Int=
 	{
-		if (end <= 1)	
+		if (end <= 1)
 			start
 		else
 			series((start*ratio),ratio,end-1)
@@ -31,7 +30,7 @@ object lab4 {
 
 	def idGet(id:Double) :Double =
 	{
-		id	
+		id
 	}//end id
 
 	def squareGet (id:Double) :Double =
@@ -44,34 +43,33 @@ object lab4 {
 		id*id*id
 	}//end cube
 
+        def higher(f:Double=>Double,a:Double) :Double =
+        {
+          (f(a)*2)-1
+        }//end higher
 
 
-	println("id = " + idGet(1))
-	println("square = " + squareGet(5))
-	println("cube = " + cubeGet(5))
-	
+        //q 11
+        (x:Double,y:Double) => Math.pow(x,y)
 
-	val test = 2
-	//print((test:Double) => test*test)
+        println((1,2))
 
+        //tests for higher
+        println("id = "     + higher(x=> x,1))
+        println("square = " + higher(x=> x*x,5))
+        println("cube = "   + higher(x=> x*x*x,5))
 
+        //tests for id ,square, cube
+	//println("id = " + idGet(1))
+	//println("square = " + squareGet(5))
+	//println("cube = " + cubeGet(5))
 
-	def higher(fun:(z*z*z), x:Double):Double =
-	{
-	
-
-		3.0
-	}//end higher
-
-
-	
-
-	//test question facFinder 
-	val resultFact = factFinder(5)
-	println("result of fact finder = " + resultFact)
+	//test question facFinder
+	//val resultFact = factFinder(5)
+	//println("result of fact finder = " + resultFact)
 
 	//test for series
 	val resultSer = series(1,2,4)
-	println("result of Series = " + resultSer)
+	//println("result of Series = " + resultSer)
 
 }
